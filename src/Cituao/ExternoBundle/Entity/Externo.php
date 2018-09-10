@@ -39,7 +39,6 @@ class Externo
      /**
      * @ORM\Column(type="string", length=12, unique=true)
      * @Assert\NotBlank(message="Es obligatorio!")
-     * @Assert\Regex(pattern="/^\d+$/", match=true, message="Cédula inválida!")
 	 */
     private $ci;
 
