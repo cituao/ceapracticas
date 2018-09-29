@@ -57,6 +57,8 @@ $( "#practicantes h3" ).css("opacity","0.4");
 				<th>Acción</th>
 			</tr>
 			<tr style="height:8px;"></tr>
+			
+			<!--
 			<tr>
 				<td  class = "colActividad">Asesoría #1</td>
 				<td  class = "colFecha">{{ c.fechaAsesoria1|date("d/m/Y") }}</td>
@@ -267,67 +269,54 @@ $( "#practicantes h3" ).css("opacity","0.4");
 				{% endif %}
 			</tr>
 
+			-->
+			
 			<tr>
 				<td>Visita presentación</td>
-				<td>{{ c.fechaVisitaP|date("d/m/Y") }}</td>
-				{% if c.fechaVisitaP > date() %}
-				<td  class = "colEstado">Aun falta!</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				{% else %}	
+				<td>-</td>
 				{% if c.listoVisitaP == true %}
-				<td  class = "colEstado">Realizada</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado">Realizada</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"><a href="{{ path('cituao_coord_consultar_visitap', { 'id': p.id}) }}">Ver</a></td>
+					<td  class = "colEstado">Realizada</td>
+					<td  class = "colEstado"></td>
+					<td  class = "colEstado">Realizada</td>
+					<td  class = "colEstado"></td>
+					<td  class = "colEstado"><a href="{{ path('cituao_coord_consultar_visitap', { 'id': p.id}) }}">Ver</a></td>
 				{% else %}
-				<td  class = "colEstado">No realizada</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado">No realizada</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				{% endif %}
+					<td  class = "colEstado">No realizada</td>
+					<td  class = "colEstado"></td>
+					<td  class = "colEstado">No realizada</td>
+					<td  class = "colEstado"></td>
+					<td  class = "colEstado"></td>
 				{% endif %}
 			</tr>
 
 			<tr>
 				<td>Evaluación #1</td>
-				<td>{{ p.fechaVisita1|date("d/m/Y") }}</td>
-				{% if e.fechaEvaluacion1 > date() %}
-				<td  class = "colEstado">Aun falta!</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				{% else %}
+				<td>-</td>
 				{% if e.listoEvaluacion1 == true %}
-				<td class = "colEstado">Realizada!</td>
-				{% if p.listoVisita1 == true %}
-				<td class = "colEstado">Realizo compromisos</td>
-				{% else %}
-				<td class = "colEstado">No se ha comprometido</td>
-				{% endif %}
+					<td class = "colEstado">Realizada!</td>
+					{% if p.listoVisita1 == true %}
+						<td class = "colEstado">Realizo compromisos</td>
+					{% else %}
+						<td class = "colEstado">No se ha comprometido</td>
+					{% endif %}
 
-				{% if c.listoEvaluacion1 == true %}
-				<td class = "colEstado">Realizo comentarios</td>
+					{% if c.listoEvaluacion1 == true %}
+						<td class = "colEstado">Realizo comentarios</td>
+					{% else %}
+						<td class = "colEstado">No ha comentado</td>
+					{% endif %}
+					<td class = "colEstado">Realizado</td>
+					<td class = "colEstado"><a href="{{ path('cituao_coord_consultar_evaluacion', { 'id': p.id, 'numeva': 1}) }}">Ver</a></td>
 				{% else %}
-				<td class = "colEstado">No ha comentado</td>
-				{% endif %}
-				<td class = "colEstado">Realizado</td>
-				<td class = "colEstado"><a href="{{ path('cituao_coord_consultar_evaluacion', { 'id': p.id, 'numeva': 1}) }}">Ver</a></td>
-				{% else %}
-				<td class = "colEstado">Sin entregar</td>
-				<td class = "colEstado"></td>
-				<td class = "colEstado"></td>
-				<td class = "colEstado">Sin entregar</td>
-				<td class = "colEstado"></td>
-				{% endif %}
+					<td class = "colEstado">Sin entregar</td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado">Sin entregar</td>
+					<td class = "colEstado"></td>
 				{% endif %}
 			</tr>
 
+			<!--
 			<tr>
 				<td>Evaluación #2</td>
 				<td>{{ p.fechaVisita2|date("d/m/Y") }}</td>
@@ -362,6 +351,7 @@ $( "#practicantes h3" ).css("opacity","0.4");
 				{% endif %}
 				{% endif %}
 			</tr>
+
 
 			<tr>
 				<td>Informe de Gestión Cuali /Cuanti #1</td>
@@ -455,71 +445,45 @@ $( "#practicantes h3" ).css("opacity","0.4");
 				{% endif %}
 			</tr>
 
+			-->
 			<tr>
 				<td>Informe final (Practicante)</td>
-				<td>{{ p.fechaInformeFinal|date("d/m/Y") }}</td>
-				{% if p.fechaInformeFinal > date() %}
-				<td  class = "colEstado">Aun falta!</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				{% else %}
+				<td>-</td>
 				{% if p.listoInformeFinal == true %}
-				<td class = "colEstado">Entregado</td>
-				<td class = "colEstado">Entregado</td>
-				<td class = "colEstado"></td>
-				<td class = "colEstado"></td>
-				<td class = "colEstado"><a href="{{ path('cituao_coord_consultar_informefinalpracticante', { 'id': p.id}) }}">Ver</a></td>
+					<td class = "colEstado">Entregado</td>
+					<td class = "colEstado">Entregado</td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"><a href="{{ path('cituao_coord_consultar_informefinalpracticante', { 'id': p.id}) }}">Ver</a></td>
 				{% else %}
-				<td class = "colEstado">Sin entregar</td>
-				<td class = "colEstado">Sin entregar</td>
-				<td class = "colEstado"></td>
-				<td class = "colEstado"></td>
-				<td class = "colEstado"></td>
+					<td class = "colEstado">Sin entregar</td>
+					<td class = "colEstado">Sin entregar</td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
 				{% endif %}
-				{% endif %}
-				
 			</tr>
 	
-			{% if p.Area.id not in [2,3] %}
 			<tr>
 				<td>Proyecto final</td>
-				<td>{{ p.fechaInformeFinal|date("d/m/Y") }}</td>
-				{% if p.fechaInformeFinal > date() %}
-					<td  class = "colEstado">Aun falta!</td>
-					<td  class = "colEstado"></td>
-					<td  class = "colEstado"></td>
-					<td  class = "colEstado"></td>
-					<td  class = "colEstado"></td>
+				<td>-</td>
+				{% if p.listoProyecto == true %}
+					<td class = "colEstado">Entregado</td>
+					<td class = "colEstado">Entregado</td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"><a href="{{ asset('uploads/documents/' ~ p.pathPdf) }}">Ver</a></td>
 				{% else %}
-					{% if p.listoProyecto == true %}
-						<td class = "colEstado">Entregado</td>
-						<td class = "colEstado">Entregado</td>
-						<td class = "colEstado"></td>
-						<td class = "colEstado"></td>
-						<td class = "colEstado"><a href="{{ asset('uploads/documents/' ~ p.pathPdf) }}">Ver</a></td>
-					{% else %}
-						<td class = "colEstado">Sin entregar</td>
-						<td class = "colEstado">Sin entregar</td>
-						<td class = "colEstado"></td>
-						<td class = "colEstado"></td>
-						<td class = "colEstado"></td>
-					{% endif %}
+					<td class = "colEstado">Sin entregar</td>
+					<td class = "colEstado">Sin entregar</td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
+					<td class = "colEstado"></td>
 				{% endif %}
 			</tr>
-			{% endif %}
-
 			<tr>
 				<td>Evaluación final (Académico)</td>
-				<td>{{ p.fechaInformeFinal|date("d/m/Y") }}</td>
-				{% if p.fechaInformeFinal > date() %}
-				<td  class = "colEstado">Aun falta!</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				{% else %}
+				<td>-</td>
 				{% if c.listoEvaluacionFinal == true %}
 				<td class = "colEstado">Entregado</td>
 				<td class = "colEstado"></td>
@@ -533,19 +497,10 @@ $( "#practicantes h3" ).css("opacity","0.4");
 				<td class = "colEstado"></td>
 				<td class = "colEstado"></td>
 				{% endif %}
-				{% endif %}
 			</tr>
-
 			<tr>
 				<td>Acta de conformidad</td>
-				<td>{{ p.fechaInformeFinal|date("d/m/Y") }}</td>
-				{% if e.fechaActa > date() %}
-				<td  class = "colEstado">Aun falta!</td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				<td  class = "colEstado"></td>
-				{% else %}
+				<td>-</td>
 				{% if e.listoActa == true %}
 				<td class = "colEstado">Entregado</td>
 				<td class = "colEstado"></td>
@@ -558,7 +513,6 @@ $( "#practicantes h3" ).css("opacity","0.4");
 				<td class = "colEstado"></td>
 				<td class = "colEstado">Sin entregar</td>
 				<td class = "colEstado"></td>
-				{% endif %}
 				{% endif %}
 			</tr>
 		</table>
