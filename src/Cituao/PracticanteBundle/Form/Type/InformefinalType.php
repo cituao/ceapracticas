@@ -12,7 +12,6 @@ class InformefinalType extends AbstractType
     {
         $builder
 		        ->add('comunicacion','textarea', array('required' => true, 'label' => ' ', 'max_length' => '5000', 'attr' => array('cols' => '130', 'rows' => '5', 'placeholder' => '¡Escribe aqui!')))
-		        ->add('asesor','textarea', array('required' => true, 'label' => ' ', 'max_length' => '5000' , 'attr' => array('cols' => '130', 'rows' => '10', 'placeholder' => '¡Escribe aqui!')))
 		        ->add('coordinacion','textarea', array('required' => true, 'label' => ' ', 'max_length' => '5000', 'attr' => array('cols' => '130', 'rows' => '5', 'placeholder' => '¡Escribe aqui!')))
 		        ->add('universidad','textarea', array('required' => true, 'label' => ' ', 'max_length' => '5000' , 'attr' => array('cols' => '130', 'rows' => '10', 'placeholder' => '¡Escribe aqui!')))
 		        ->add('autoreflexion','textarea', array('required' => false, 'label' => ' ', 'max_length' => '5000', 'attr' => array('cols' => '130', 'rows' => '5', 'placeholder' => '¡Escribe una corta reflexión!')))
